@@ -1,1 +1,1 @@
-web: gunicorn curd_store.wsgi
+web: gunicorn django_crud.wsgi
