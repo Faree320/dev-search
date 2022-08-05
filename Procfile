@@ -1,1 +1,1 @@
-web: gunicorn curd_store.wsgi --log-file -
+web: gunicorn crud_store.wsgi --log-file -
