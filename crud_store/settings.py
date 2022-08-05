@@ -87,25 +87,17 @@ WSGI_APPLICATION = 'crud_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'devsearch',
-#         'USER': 'postgres',
-#         'PASSWORD': 'malik78693',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
-#
-#     }
-# }
-import django_heroku
-import dj_database_url
-
 DATABASES = {
-    'default': dj_database_url.config()
-}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'devsearch',
+        'USER': 'postgres',
+        'PASSWORD': 'malik78693',
+        'HOST': 'localhost',
+        'PORT': '5432'
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+    }
+}
 
 
 # Password validation
@@ -158,7 +150,6 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
