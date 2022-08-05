@@ -44,6 +44,12 @@ INSTALLED_APPS = [
 
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -83,8 +89,13 @@ WSGI_APPLICATION = 'crud_store.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'devsearch',
+        'USER': 'postgres',
+        'PASSWORD': 'malik78693',
+        'HOST': 'localhost',
+        'PORT': '5432'
+
     }
 }
 
