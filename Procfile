@@ -1,0 +1,1 @@
+web: gunicorn  curd_store.wsgi --log-file -
