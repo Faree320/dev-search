@@ -1,1 +1,1 @@
-web: gunicorn django_crud.wsgi
+web: gunicorn curd_store.wsgi --log-file -
