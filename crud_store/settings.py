@@ -13,6 +13,8 @@ import os.path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django_heroku
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-qver05p%m=6rdb*3be369w5jw4yr$+j7%e+a+6=vir&k$i=-wn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'django-dev-search-app.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'portfolio-devsearch.herokuapp.com']
 
 
 # Application definition
@@ -89,11 +91,11 @@ WSGI_APPLICATION = 'crud_store.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'devsearch',
-        'USER': 'postgres',
-        'PASSWORD': 'malik78693',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'db10jut6g7q0dv',
+        'USER': 'pmtepjlnrgaqya',
+        'PASSWORD': '2cca4a8e39ad5ed1974919cb26a0bff710b4c4edc5f550837c681996ef66fb20',
+        'HOST': 'ec2-54-161-255-125.compute-1.amazonaws.com',
         'PORT': '5432'
 
     }
@@ -150,6 +152,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
