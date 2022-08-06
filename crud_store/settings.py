@@ -87,7 +87,14 @@ WSGI_APPLICATION = 'crud_store.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 
 DATABASES = {
     'default': {
@@ -142,6 +149,7 @@ EMAIL_HOST_PASSWORD = 'fndgfojugmsztwds'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+
 
 STATIC_URL = 'static/'
 MEDIA_URL = '/images/'
